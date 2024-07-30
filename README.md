@@ -33,7 +33,9 @@ conda activate mover
 pip install -r requirement.txt
 ```
 You can download the pretrained model Stable Diffusion v1.5 from [Huggingface](https://huggingface.co/runwayml/stable-diffusion-v1-5), and specify the `model_path` to your local directory.
+
 [Optional] You can download the fine-tuned vae model from [Huggingface](https://huggingface.co/stabilityai/sd-vae-ft-mse) for better performance.
+
 ## Run Gradio UI
 To start the Gradio UI of DreamMover, run the following in your environment:
 ```bash
