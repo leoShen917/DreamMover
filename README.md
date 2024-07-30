@@ -22,5 +22,58 @@
   <div align="center">
         <img src="./assets/teaser.png", width="900">
   </div>
+</p>
 
-#### coming soon..
+## Installation
+```
+git clone https://github.com/leoShen917/DreamMover.git
+cd DreamMover
+conda create -n mover python=3.8.5
+conda activate mover
+pip install -r requirement.txt
+```
+You can download the pretrained model Stable Diffusion v1.5 from [Huggingface](https://huggingface.co/runwayml/stable-diffusion-v1-5), and specify the `model_path` to your local directory.
+[Optional] You can download the fine-tuned vae model from [Huggingface](https://huggingface.co/stabilityai/sd-vae-ft-mse) for better performance.
+## Run Gradio UI
+To start the Gradio UI of DreamMover, run the following in your environment:
+```bash
+python gradio_ui.py
+```
+Then, by default, you can access the UI at [http://127.0.0.1:7860](http://127.0.0.1:7860).
+
+<div align="center">
+  <img src="./assets/ui.png", width="900">
+</div>
+
+## Usage
+To start with, run the following command to train a Lora for image pair:
+```
+python lora/train_dreambooth_lora.py --pretrained_model_name_or_path [model_path] --instance_data_dir [img_path] --output_dir [lora_path] --instance_prompt [prompt] --lora_rank 16
+```
+
+After that, we now can run the main code:
+```
+python main.py \
+  --prompt [prompt] --img_path [img_path] --model_path [model_path] --vae_path [vae_path] --lora_path [lora_path] --save_dir [save_dir]
+```
+The script also supports the following options:
+- `--prompt`: Prompt of the image pair(default: "")
+- `--img_path`: Path of the image pair
+- `--model_path`: Pretrained model path (default: "runwayml/stable-diffusion-v1-5")
+- `--vae_path`: vae model path (default= "default")
+- `--lora_path`: lora model path (the output path of train_lora)
+- `--save_dir`: path of the output images (default= "./results")
+
+# Citation
+If you find our work useful in your research, please consider to cite our paper:
+```
+@InProceedings{shen2024DreamMover,
+    author    = {Shen, Liao and Liu, Tianqi and Sun, Huiqiang and Ye, Xinyi and Li, Baopu and Zhang, Jianming and Cao, Zhiguo},
+    title     = {DreamMover: Leveraging the Prior of Diffusion Models for Image Interpolation with Large Motion},
+    journal   = {arXiv preprint},
+    year      = {2024},
+}
+```
+
+## Acknowledgement
+This code borrows heavily from [DragDiffusion](https://github.com/Yujun-Shi/DragDiffusion), [DiffMorpher](https://github.com/Kevin-thu/DiffMorpher) and [Diffusers](https://github.com/huggingface/diffusers). We thank the respective authors for open sourcing their method.

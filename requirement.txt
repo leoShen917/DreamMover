@@ -1,0 +1,16 @@
+accelerate==0.17.0 
+diffusers==0.17.1 
+einops==0.6.0 
+gradio==4.7.1
+numpy==1.23.2 
+opencv_python==4.7.0.68 
+Pillow==9.4.0 
+safetensors==0.4.0 
+imageio==2.9.0 
+imageio-ffmpeg==0.4.2 
+transformers==4.27.0 
+tqdm==4.64.1
+xformers==0.0.18 
+torch==2.0.0
+torchvision==0.15.1
+cupy-cuda11x
