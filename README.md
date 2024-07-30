@@ -64,16 +64,5 @@ The script also supports the following options:
 - `--lora_path`: lora model path (the output path of train_lora)
 - `--save_dir`: path of the output images (default= "./results")
 
-# Citation
-If you find our work useful in your research, please consider to cite our paper:
-```
-@InProceedings{shen2024DreamMover,
-    author    = {Shen, Liao and Liu, Tianqi and Sun, Huiqiang and Ye, Xinyi and Li, Baopu and Zhang, Jianming and Cao, Zhiguo},
-    title     = {DreamMover: Leveraging the Prior of Diffusion Models for Image Interpolation with Large Motion},
-    journal   = {arXiv preprint},
-    year      = {2024},
-}
-```
-
 ## Acknowledgement
 This code borrows heavily from [DragDiffusion](https://github.com/Yujun-Shi/DragDiffusion), [DiffMorpher](https://github.com/Kevin-thu/DiffMorpher) and [Diffusers](https://github.com/huggingface/diffusers). We thank the respective authors for open sourcing their method.
