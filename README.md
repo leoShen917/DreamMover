@@ -65,7 +65,7 @@ The script also supports the following options:
 - `--vae_path`: vae model path (default= "default")
 - `--lora_path`: lora model path (the output path of train_lora)
 - `--save_dir`: path of the output images (default= "./results")
-- `--time`: the frames of generated video
+- `--Time`: the frames of generated video
 
 ## Acknowledgement
 This code borrows heavily from [DragDiffusion](https://github.com/Yujun-Shi/DragDiffusion), [DiffMorpher](https://github.com/Kevin-thu/DiffMorpher) and [Diffusers](https://github.com/huggingface/diffusers). We thank the respective authors for open sourcing their method.
