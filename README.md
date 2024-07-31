@@ -56,7 +56,7 @@ python lora/train_dreambooth_lora.py --pretrained_model_name_or_path [model_path
 After that, we now can run the main code:
 ```
 python main.py \
-  --prompt [prompt] --img_path [img_path] --model_path [model_path] --vae_path [vae_path] --lora_path [lora_path] --save_dir [save_dir]
+  --prompt [prompt] --img_path [img_path] --model_path [model_path] --vae_path [vae_path] --lora_path [lora_path] --save_dir [save_dir] --Time 33
 ```
 The script also supports the following options:
 - `--prompt`: Prompt of the image pair(default: "")
@@ -65,6 +65,7 @@ The script also supports the following options:
 - `--vae_path`: vae model path (default= "default")
 - `--lora_path`: lora model path (the output path of train_lora)
 - `--save_dir`: path of the output images (default= "./results")
+- `--time`: the frames of generated video
 
 ## Acknowledgement
 This code borrows heavily from [DragDiffusion](https://github.com/Yujun-Shi/DragDiffusion), [DiffMorpher](https://github.com/Kevin-thu/DiffMorpher) and [Diffusers](https://github.com/huggingface/diffusers). We thank the respective authors for open sourcing their method.
